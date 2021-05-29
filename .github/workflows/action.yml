@@ -17,5 +17,5 @@ jobs:
         uses: actions/setup-java@v1
         with:
           java-version: ${{ matrix.java-version }}
-      - name: Test and Build
-        run: ./mvnw jetty:run-war
+      - name: Test
+        run: ./mvnw test
