@@ -1,0 +1,22 @@
+name: Java Spring CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    environment: 
+      name: staging
+    strategy:
+      matrix:
+        java-version: [8]
+    steps:
+      - uses: actions/checkout@v1
+      - name: Set up JDK 
+        uses: actions/setup-java@v1
+        with:
+          java-version: ${{ matrix.java-version }}
+      with:
+        tomcat-version: ${{ matrix.tomcat-version }}
+    - name: Test and Build
+      run: ./mvnw jetty:run-war
