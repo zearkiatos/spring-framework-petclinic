@@ -1,7 +1,7 @@
 # How to run
 
 ./mvnw tomcat7:run-var #run app
-./mvnw jetty:run-war
+./mvnw jetty:run-war #run app
 
 # Spring PetClinic Sample Application
 

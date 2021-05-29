@@ -1,0 +1,8 @@
+image: tomcat:8
+stages:
+  - test
+
+test:
+  stage: test
+  script:
+     - ./mvnw test
