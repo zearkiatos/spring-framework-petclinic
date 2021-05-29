@@ -1,0 +1,116 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  annotations:
+    deployment.kubernetes.io/desired-replicas: "3"
+    deployment.kubernetes.io/max-replicas: "4"
+    deployment.kubernetes.io/revision: "1"
+  creationTimestamp: "2021-05-29T18:54:12Z"
+  generation: 1
+  labels:
+    app: petclinic-app
+    pod-template-hash: 84847d8ddb
+  managedFields:
+  - apiVersion: apps/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:deployment.kubernetes.io/desired-replicas: {}
+          f:deployment.kubernetes.io/max-replicas: {}
+          f:deployment.kubernetes.io/revision: {}
+        f:labels:
+          .: {}
+          f:app: {}
+          f:pod-template-hash: {}
+        f:ownerReferences:
+          .: {}
+          k:{"uid":"5eff7359-090d-42b3-a36d-bb7c817cea1f"}:
+            .: {}
+            f:apiVersion: {}
+            f:blockOwnerDeletion: {}
+            f:controller: {}
+            f:kind: {}
+            f:name: {}
+            f:uid: {}
+      f:spec:
+        f:replicas: {}
+        f:selector:
+          f:matchLabels:
+            .: {}
+            f:app: {}
+            f:pod-template-hash: {}
+        f:template:
+          f:metadata:
+            f:labels:
+              .: {}
+              f:app: {}
+              f:pod-template-hash: {}
+          f:spec:
+            f:containers:
+              k:{"name":"spring-framework-petclinic-sha256-1"}:
+                .: {}
+                f:image: {}
+                f:imagePullPolicy: {}
+                f:name: {}
+                f:resources: {}
+                f:terminationMessagePath: {}
+                f:terminationMessagePolicy: {}
+            f:dnsPolicy: {}
+            f:restartPolicy: {}
+            f:schedulerName: {}
+            f:securityContext: {}
+            f:terminationGracePeriodSeconds: {}
+      f:status:
+        f:availableReplicas: {}
+        f:fullyLabeledReplicas: {}
+        f:observedGeneration: {}
+        f:readyReplicas: {}
+        f:replicas: {}
+    manager: kube-controller-manager
+    operation: Update
+    time: "2021-05-29T18:54:27Z"
+  name: petclinic-app-84847d8ddb
+  namespace: default
+  ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: Deployment
+    name: petclinic-app
+    uid: 5eff7359-090d-42b3-a36d-bb7c817cea1f
+  resourceVersion: "3099"
+  selfLink: /apis/apps/v1/namespaces/default/replicasets/petclinic-app-84847d8ddb
+  uid: d1468998-4f7c-4bdf-a959-e6c06203537c
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: petclinic-app
+      pod-template-hash: 84847d8ddb
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: petclinic-app
+        pod-template-hash: 84847d8ddb
+    spec:
+      containers:
+      - image: gcr.io/pedrocapriles/spring-framework-petclinic@sha256:5822a4d82fd0578884bab0d0a38610a796c8fd35f7845da1e353571fe9413ee4
+        imagePullPolicy: IfNotPresent
+        name: spring-framework-petclinic-sha256-1
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+status:
+  availableReplicas: 3
+  fullyLabeledReplicas: 3
+  observedGeneration: 1
+  readyReplicas: 3
+  replicas: 3
