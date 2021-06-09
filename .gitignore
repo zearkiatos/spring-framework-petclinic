@@ -12,3 +12,6 @@ bin/
 target/
 
 .DS_STORE
+
+.aliases
+.bashrc
